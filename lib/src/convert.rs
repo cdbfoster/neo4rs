@@ -265,6 +265,12 @@ impl Into<BoltType> for Vec<u8> {
     }
 }
 
+impl Into<BoltType> for f64 {
+    fn into(self) -> BoltType {
+        BoltType::Float(BoltFloat::new(self))
+    }
+}
+
 impl Into<BoltType> for i64 {
     fn into(self) -> BoltType {
         BoltType::Integer(BoltInteger::new(self))
